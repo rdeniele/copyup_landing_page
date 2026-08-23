@@ -1,26 +1,137 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary: #1f8f84;
+  --primary-2: #2aa89a;
+  --accent: #167d73;
+  --accent-text: #0f655d;
+  --deep-navy: #0a0c0f;
+  --page-bg: #e7e9ec;
+  --surface: #ffffff;
+  --surface-2: #f3f4f6;
+  --text: #1b2128;
+  --text-muted: #5a626d;
+  --text-faint: #868f9b;
+  --border: #e3e5e9;
+  --border-strong: #d0d3d9;
+  --success: #1f9d4d;
+  --warning: #c2820c;
+  --danger: #d64545;
+  --primary-soft: #e2f1ef;
+  --primary-soft-2: #e3f0ee;
+  --brand-gradient: linear-gradient(120deg, #1f8f84, #2aa89a);
+  --radius: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+  --shadow-card: 0 1px 2px rgba(22, 28, 34, 0.04), 0 8px 24px rgba(22, 28, 34, 0.06);
+  --shadow-lift: 0 20px 60px -20px rgba(15, 101, 93, 0.45);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-primary: var(--primary);
+  --color-primary-2: var(--primary-2);
+  --color-accent: var(--accent);
+  --color-deep-navy: var(--deep-navy);
+  --color-page-bg: var(--page-bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-text-faint: var(--text-faint);
+  --color-border: var(--border);
+  --color-primary-soft: var(--primary-soft);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--page-bg);
+  color: var(--text);
+}
+
+.font-display {
+  font-family: var(--font-display), "Space Grotesk", system-ui, sans-serif;
+}
+
+.font-body {
+  font-family: var(--font-body), "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+.gradient-text {
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.card-shadow {
+  box-shadow: var(--shadow-card);
+}
+
+.hero-glow {
+  background:
+    radial-gradient(60% 50% at 18% 8%, rgba(42, 168, 154, 0.35), transparent 65%),
+    radial-gradient(45% 40% at 85% 0%, rgba(31, 143, 132, 0.28), transparent 60%),
+    linear-gradient(180deg, #0a0c0f 0%, #0f2723 55%, #0a0c0f 100%);
+}
+
+.noise-overlay {
+  position: relative;
+}
+
+.noise-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-14px) rotate(1deg); }
+}
+
+@keyframes float-slower {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+.animate-float-slow {
+  animation: float-slow 7s ease-in-out infinite;
+}
+
+.animate-float-slower {
+  animation: float-slower 9s ease-in-out infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 32s linear infinite;
+}
+
+/*
+ * Reel scenes: on phone widths, every top-level section fills exactly one
+ * screen and snaps into place — so scrolling through the site plays back
+ * like swiping through an Instagram/TikTok Reel. Screen-record the scroll
+ * on a phone viewport and it doubles as reel footage. Desktop gets normal
+ * document flow (no snap, no forced height).
+ */
+@media (max-width: 639px) {
+  html {
+    scroll-snap-type: y mandatory;
+  }
+
+  .reel-scene {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
 }
