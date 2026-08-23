@@ -44,11 +44,11 @@ export default function Hero() {
 
       <div className="absolute inset-x-0 top-6 z-20 flex justify-center px-6 sm:top-8 lg:hidden">
         <Image
-          src="/brand/copyup-logo.png"
+          src="/brand/copyup-logo-white.png"
           alt="CopyUp.ai"
           width={220}
           height={62}
-          className="h-10 w-auto brightness-0 invert sm:h-12"
+          className="h-10 w-auto sm:h-12"
           priority
         />
       </div>
@@ -103,11 +103,11 @@ export default function Hero() {
       <div className="absolute inset-0 z-10 hidden lg:flex lg:flex-col">
         <div className="relative flex justify-center px-10 py-7">
           <Image
-            src="/brand/copyup-logo.png"
+            src="/brand/copyup-logo-white.png"
             alt="CopyUp.ai"
             width={150}
             height={42}
-            className="h-8 w-auto brightness-0 invert"
+            className="h-8 w-auto"
             priority
           />
           <div className="absolute end-10 top-1/2 -translate-y-1/2">
