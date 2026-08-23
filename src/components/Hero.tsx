@@ -2,9 +2,11 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { hero, siteUrl } from "@/lib/content";
+import { siteUrl } from "@/lib/content";
+import { useLanguage } from "@/lib/language-context";
+import LanguageToggle from "./LanguageToggle";
 
-function StartFreeButton() {
+function StartFreeButton({ label }: { label: string }) {
   return (
     <a
       href={siteUrl}
@@ -12,12 +14,16 @@ function StartFreeButton() {
       rel="noopener noreferrer"
       className="rounded-[var(--radius-pill)] bg-[var(--deep-navy)] px-8 py-4 text-sm font-semibold text-white shadow-[var(--shadow-lift)] transition hover:brightness-110"
     >
-      {hero.primaryCta}
+      {label}
     </a>
   );
 }
 
 export default function Hero() {
+  const { t, lang } = useLanguage();
+  const hero = t.hero;
+  const mirrored = lang === "he" ? "scaleX(-1)" : undefined;
+
   return (
     <section
       id="top"
@@ -30,7 +36,7 @@ export default function Hero() {
           alt="Hand holding a laptop showing the CopyUp dashboard"
           fill
           sizes="100vw"
-          style={{ objectFit: "cover", objectPosition: "center" }}
+          style={{ objectFit: "cover", objectPosition: "center", transform: mirrored }}
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/22 via-transparent to-black/28" />
@@ -45,6 +51,10 @@ export default function Hero() {
           className="h-10 w-auto brightness-0 invert sm:h-12"
           priority
         />
+      </div>
+
+      <div className="absolute end-6 top-6 z-30 sm:top-8 lg:hidden">
+        <LanguageToggle dark />
       </div>
 
       <div className="absolute inset-0 z-10 flex flex-col justify-between px-6 pb-10 pt-28 text-center lg:hidden">
@@ -69,7 +79,7 @@ export default function Hero() {
             {hero.headline}
           </h1>
           <div className="flex flex-col items-center gap-3">
-            <StartFreeButton />
+            <StartFreeButton label={hero.primaryCta} />
             <p className="text-xs text-white/80 [text-shadow:0_1px_6px_rgba(0,0,0,0.35)]">
               {hero.microcopy}
             </p>
@@ -84,14 +94,14 @@ export default function Hero() {
           alt="Hand holding a laptop showing the CopyUp dashboard"
           fill
           sizes="100vw"
-          style={{ objectFit: "cover", objectPosition: "left top" }}
+          style={{ objectFit: "cover", objectPosition: "left top", transform: mirrored }}
           priority
         />
         <div className="absolute inset-0 bg-black/22" />
       </div>
 
       <div className="absolute inset-0 z-10 hidden lg:flex lg:flex-col">
-        <div className="flex justify-center px-10 py-7">
+        <div className="relative flex justify-center px-10 py-7">
           <Image
             src="/brand/copyup-logo.png"
             alt="CopyUp.ai"
@@ -100,6 +110,9 @@ export default function Hero() {
             className="h-8 w-auto brightness-0 invert"
             priority
           />
+          <div className="absolute end-10 top-1/2 -translate-y-1/2">
+            <LanguageToggle dark />
+          </div>
         </div>
 
         <div className="mx-auto flex w-full max-w-7xl flex-1 items-center justify-end px-10">
@@ -116,7 +129,7 @@ export default function Hero() {
               {hero.headline}
             </h1>
             <div className="flex flex-col items-end gap-3">
-              <StartFreeButton />
+              <StartFreeButton label={hero.primaryCta} />
               <p className="text-xs text-white/85 [text-shadow:0_1px_6px_rgba(0,0,0,0.4)]">
                 {hero.microcopy}
               </p>

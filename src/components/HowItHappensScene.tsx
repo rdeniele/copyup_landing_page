@@ -1,6 +1,11 @@
-import { howItHappens } from "@/lib/content";
+"use client";
+
+import { useLanguage } from "@/lib/language-context";
 
 export default function HowItHappensScene() {
+  const { t } = useLanguage();
+  const howItHappens = t.howItHappens;
+
   return (
     <section className="reel-scene flex flex-col items-center justify-center bg-[var(--surface)] px-6 py-20 text-center sm:py-28">
       <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[var(--accent-text)]">
@@ -14,12 +19,12 @@ export default function HowItHappensScene() {
       </p>
 
       <div className="mt-5 flex flex-wrap justify-center gap-2">
-        {howItHappens.tags.map((t) => (
+        {howItHappens.tags.map((tag) => (
           <span
-            key={t}
+            key={tag}
             className="rounded-full border border-[var(--border)] bg-[var(--surface-2)] px-3 py-1 text-xs font-semibold text-[var(--text-muted)]"
           >
-            {t}
+            {tag}
           </span>
         ))}
       </div>

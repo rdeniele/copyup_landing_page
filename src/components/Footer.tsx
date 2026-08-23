@@ -1,7 +1,12 @@
+"use client";
+
 import Image from "next/image";
-import { footer } from "@/lib/content";
+import { useLanguage } from "@/lib/language-context";
 
 export default function Footer() {
+  const { t } = useLanguage();
+  const footer = t.footer;
+
   return (
     <footer className="reel-scene flex flex-col items-center justify-center gap-6 bg-[var(--surface)] px-6 py-20 text-center sm:py-28">
       <Image
@@ -14,7 +19,9 @@ export default function Footer() {
       <p className="max-w-sm font-display text-2xl font-semibold leading-snug text-[var(--text)] sm:text-3xl">
         {footer.tagline}
       </p>
-      <p className="text-xs uppercase tracking-[0.3em] text-[var(--text-faint)]">On autopilot.</p>
+      <p className="text-xs uppercase tracking-[0.3em] text-[var(--text-faint)]">
+        {footer.autopilot}
+      </p>
     </footer>
   );
 }

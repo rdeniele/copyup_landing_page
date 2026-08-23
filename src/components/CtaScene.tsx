@@ -1,6 +1,12 @@
-import { leadCta, siteUrl } from "@/lib/content";
+"use client";
+
+import { siteUrl } from "@/lib/content";
+import { useLanguage } from "@/lib/language-context";
 
 export default function CtaScene() {
+  const { t } = useLanguage();
+  const leadCta = t.leadCta;
+
   return (
     <section className="reel-scene flex flex-col items-center justify-center bg-[var(--surface)] px-6 py-20 text-center sm:py-28">
       <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[var(--accent-text)]">

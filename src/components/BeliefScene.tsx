@@ -1,6 +1,11 @@
-import { belief } from "@/lib/content";
+"use client";
+
+import { useLanguage } from "@/lib/language-context";
 
 export default function BeliefScene() {
+  const { t } = useLanguage();
+  const belief = t.belief;
+
   return (
     <section className="reel-scene flex flex-col items-center justify-center bg-[var(--surface)] px-6 py-20 text-center sm:py-28">
       <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[var(--accent-text)]">

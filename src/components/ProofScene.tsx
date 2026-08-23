@@ -2,19 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { platforms, proof } from "@/lib/content";
-
-const icons: Record<string, string> = {
-  Telegram: "/icons/telegram.svg",
-  Facebook: "/icons/facebook.svg",
-  Instagram: "/icons/instagram.svg",
-  LinkedIn: "/icons/linkedin.svg",
-  GitHub: "/icons/github.svg",
-  TikTok: "/icons/tiktok.svg",
-  YouTube: "/icons/youtube.svg",
-  Threads: "/icons/threads.svg",
-  "Google Business Profile": "/icons/google-business.svg",
-};
+import { platformIcons } from "@/lib/content";
+import { useLanguage } from "@/lib/language-context";
 
 function useCountUp(target: number, duration = 1400, stepMs = 16) {
   const [value, setValue] = useState(0);
@@ -56,6 +45,9 @@ function useCountUp(target: number, duration = 1400, stepMs = 16) {
 }
 
 export default function ProofScene() {
+  const { t } = useLanguage();
+  const proof = t.proof;
+  const platforms = t.platforms.map((name, i) => ({ name, icon: platformIcons[i] }));
   const row = [...platforms, ...platforms];
   const { value, ref } = useCountUp(Number(proof.stat));
 
@@ -79,15 +71,21 @@ export default function ProofScene() {
 
       <div className="w-full max-w-md overflow-hidden sm:max-w-2xl">
         <div className="animate-marquee flex w-max items-center gap-10">
-          {row.map((name, i) => (
+          {row.map((platform, i) => (
             <div
-              key={`${name}-${i}`}
+              key={`${platform.name}-${i}`}
               className="flex items-center gap-2 whitespace-nowrap opacity-70 grayscale transition hover:opacity-100 hover:grayscale-0"
             >
-              {icons[name] && (
-                <Image src={icons[name]} alt={name} width={20} height={20} className="h-5 w-5" />
+              {platform.icon && (
+                <Image
+                  src={platform.icon}
+                  alt={platform.name}
+                  width={20}
+                  height={20}
+                  className="h-5 w-5"
+                />
               )}
-              <span className="text-sm font-medium text-[var(--text-muted)]">{name}</span>
+              <span className="text-sm font-medium text-[var(--text-muted)]">{platform.name}</span>
             </div>
           ))}
         </div>
