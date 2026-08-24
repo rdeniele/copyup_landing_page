@@ -4,7 +4,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { siteUrl } from "@/lib/content";
 import { useLanguage } from "@/lib/language-context";
-import LanguageToggle from "./LanguageToggle";
 
 function StartFreeButton({ label }: { label: string }) {
   return (
@@ -42,22 +41,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/22 via-transparent to-black/28" />
       </div>
 
-      <div className="absolute inset-x-0 top-6 z-20 flex justify-center px-6 sm:top-8 lg:hidden">
-        <Image
-          src="/brand/copyup-logo-white.png"
-          alt="CopyUp.ai"
-          width={220}
-          height={62}
-          className="h-10 w-auto sm:h-12"
-          priority
-        />
-      </div>
-
-      <div className="absolute end-6 top-6 z-30 sm:top-8 lg:hidden">
-        <LanguageToggle dark />
-      </div>
-
-      <div className="absolute inset-0 z-10 flex flex-col justify-between px-6 pb-10 pt-28 text-center lg:hidden">
+      <div className="absolute inset-0 z-10 flex flex-col justify-between px-6 pb-10 pt-24 text-center lg:hidden">
         <motion.div
           initial={{ opacity: 0, y: -12 }}
           animate={{ opacity: 1, y: 0 }}
@@ -100,22 +84,8 @@ export default function Hero() {
         <div className="absolute inset-0 bg-black/22" />
       </div>
 
-      <div className="absolute inset-0 z-10 hidden lg:flex lg:flex-col">
-        <div className="relative flex justify-center px-10 py-7">
-          <Image
-            src="/brand/copyup-logo-white.png"
-            alt="CopyUp.ai"
-            width={150}
-            height={42}
-            className="h-8 w-auto"
-            priority
-          />
-          <div className="absolute end-10 top-1/2 -translate-y-1/2">
-            <LanguageToggle dark />
-          </div>
-        </div>
-
-        <div className="mx-auto flex w-full max-w-7xl flex-1 items-center justify-end px-10">
+      <div className="absolute inset-0 z-10 hidden items-center lg:flex">
+        <div className="mx-auto flex w-full max-w-7xl items-center justify-end px-10 pt-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

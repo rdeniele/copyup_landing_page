@@ -7,7 +7,10 @@ export default function HowItHappensScene() {
   const howItHappens = t.howItHappens;
 
   return (
-    <section className="reel-scene flex flex-col items-center justify-center bg-[var(--surface)] px-6 py-20 text-center sm:py-28">
+    <section
+      id="how-it-happens"
+      className="reel-scene flex flex-col items-center justify-center bg-[var(--surface)] px-6 py-20 text-center sm:py-28"
+    >
       <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[var(--accent-text)]">
         {howItHappens.eyebrow}
       </p>

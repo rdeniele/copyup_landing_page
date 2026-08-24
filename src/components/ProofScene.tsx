@@ -52,7 +52,10 @@ export default function ProofScene() {
   const { value, ref } = useCountUp(Number(proof.stat));
 
   return (
-    <section className="reel-scene flex flex-col items-center justify-center gap-14 bg-[var(--surface)] px-6 py-20 text-center sm:py-28">
+    <section
+      id="platforms"
+      className="reel-scene flex flex-col items-center justify-center gap-14 bg-[var(--surface)] px-6 py-20 text-center sm:py-28"
+    >
       <div>
         <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[var(--text-faint)]">
           {proof.eyebrow}
