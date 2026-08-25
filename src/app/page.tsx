@@ -1,9 +1,12 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
-import ProofScene from "@/components/ProofScene";
-import BeliefScene from "@/components/BeliefScene";
-import HowItHappensScene from "@/components/HowItHappensScene";
-import EnginesScene from "@/components/EnginesScene";
+import GoogleAISection from "@/components/GoogleAISection";
+import DistributionSection from "@/components/DistributionSection";
+import TurboSection from "@/components/TurboSection";
+import SixMonthPlanSection from "@/components/SixMonthPlanSection";
+import CalendarSection from "@/components/CalendarSection";
+import MultilingualSection from "@/components/MultilingualSection";
+import MeasureSection from "@/components/MeasureSection";
 import CtaScene from "@/components/CtaScene";
 import Footer from "@/components/Footer";
 
@@ -13,10 +16,13 @@ export default function Home() {
       <Nav />
       <main className="flex-1">
         <Hero />
-        <ProofScene />
-        <BeliefScene />
-        <HowItHappensScene />
-        <EnginesScene />
+        <GoogleAISection />
+        <DistributionSection />
+        <TurboSection />
+        <SixMonthPlanSection />
+        <CalendarSection />
+        <MultilingualSection />
+        <MeasureSection />
         <CtaScene />
         <Footer />
       </main>

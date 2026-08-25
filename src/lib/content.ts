@@ -1,11 +1,5 @@
 import { en } from "./translations/en";
 import { he } from "./translations/he";
-import { es } from "./translations/es";
-import { ru } from "./translations/ru";
-import { pt } from "./translations/pt";
-import { it } from "./translations/it";
-import { ar } from "./translations/ar";
-import { ur } from "./translations/ur";
 
 export const siteUrl = "https://www.copyup.ai";
 
@@ -29,23 +23,17 @@ export const platformIcons = [
   "/icons/tiktok.svg",
   "/icons/youtube.svg",
   "/icons/threads.svg",
-  null,
-  null,
-  null,
+  "/icons/shopify.svg",
+  "/icons/wix.svg",
+  "/icons/wordpress.svg",
 ];
 
-export const content = { en, es, he, ru, pt, it, ar, ur };
+export const content = { en, he };
 export type Language = keyof typeof content;
 
-export const rtlLanguages = new Set<Language>(["he", "ar", "ur"]);
+export const rtlLanguages = new Set<Language>(["he"]);
 
 export const languageOptions: { code: Language; flag: string; name: string }[] = [
   { code: "en", flag: "🇺🇸", name: "English" },
-  { code: "es", flag: "🇪🇸", name: "Español" },
   { code: "he", flag: "🇮🇱", name: "עברית" },
-  { code: "ru", flag: "🇷🇺", name: "Русский" },
-  { code: "pt", flag: "🇵🇹", name: "Português" },
-  { code: "it", flag: "🇮🇹", name: "Italiano" },
-  { code: "ar", flag: "🇸🇦", name: "العربية" },
-  { code: "ur", flag: "🇵🇰", name: "اردو" },
 ];

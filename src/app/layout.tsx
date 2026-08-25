@@ -22,9 +22,9 @@ const rubik = Rubik({
 });
 
 export const metadata: Metadata = {
-  title: "CopyUp.ai | Automated SEO & GEO Content Marketing",
+  title: "CopyUp.ai | One Hour. Six Months of Organic Marketing.",
   description:
-    "CopyUp plans, creates, optimizes, and publishes SEO + GEO content across your website and digital channels, in your brand voice, on autopilot.",
+    "CopyUp is the organic marketing operating system. Set up your business once, and CopyUp builds your strategy, creates content in your brand voice, publishes it across your channels, measures what works and keeps improving.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

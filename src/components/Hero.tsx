@@ -57,12 +57,12 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
-          className="flex flex-col items-center gap-5"
+          className="flex flex-col items-center gap-3"
         >
           <h1 className="font-display text-3xl font-bold leading-[1.05] tracking-[-0.01em] text-white [text-shadow:0_2px_12px_rgba(0,0,0,0.4)]">
             {hero.headline}
           </h1>
-          <div className="flex flex-col items-center gap-3">
+          <div className="mt-1 flex flex-col items-center gap-2">
             <StartFreeButton label={hero.reviewCta} />
             <p className="text-xs text-white/80 [text-shadow:0_1px_6px_rgba(0,0,0,0.35)]">
               {hero.microcopy}
@@ -98,7 +98,7 @@ export default function Hero() {
             <h1 className="font-display text-4xl font-bold leading-[1.02] tracking-[-0.02em] text-white [text-shadow:0_2px_14px_rgba(0,0,0,0.45)] xl:text-[3.1rem]">
               {hero.headline}
             </h1>
-            <div className="flex flex-col items-end gap-3">
+            <div className="mt-1 flex flex-col items-end gap-3">
               <StartFreeButton label={hero.reviewCta} />
               <p className="text-xs text-white/85 [text-shadow:0_1px_6px_rgba(0,0,0,0.4)]">
                 {hero.microcopy}
