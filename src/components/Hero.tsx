@@ -8,7 +8,7 @@ import { useLanguage } from "@/lib/language-context";
 function StartFreeButton({ label }: { label: string }) {
   return (
     <a
-      href={siteUrl}
+      href={`${siteUrl}/signup`}
       target="_blank"
       rel="noopener noreferrer"
       className="rounded-[var(--radius-pill)] bg-[var(--deep-navy)] px-8 py-4 text-sm font-semibold text-white shadow-[var(--shadow-lift)] transition hover:brightness-110"
@@ -19,9 +19,9 @@ function StartFreeButton({ label }: { label: string }) {
 }
 
 export default function Hero() {
-  const { t, lang } = useLanguage();
+  const { t, isRtl } = useLanguage();
   const hero = t.hero;
-  const mirrored = lang === "he" ? "scaleX(-1)" : undefined;
+  const mirrored = isRtl ? "scaleX(-1)" : undefined;
 
   return (
     <section

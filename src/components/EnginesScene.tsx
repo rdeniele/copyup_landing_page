@@ -29,13 +29,28 @@ export default function EnginesScene() {
                 i % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""
               }`}
             >
-              <div className="rounded-[var(--radius-lg)] bg-[var(--surface)] p-2 shadow-xl shadow-black/10">
+              <div className="overflow-hidden rounded-[var(--radius-lg)] bg-[#e7e7ea] shadow-xl shadow-black/15 transition duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/25">
+                <div className="flex items-center gap-2 px-4 py-2.5">
+                  <span className="h-3 w-3 rounded-full bg-[#ff5f57]" />
+                  <span className="h-3 w-3 rounded-full bg-[#febc2e]" />
+                  <span className="h-3 w-3 rounded-full bg-[#28c840]" />
+                  <span className="mx-auto flex items-center gap-1.5 rounded-full bg-white px-4 py-1 text-[11px] text-[var(--text-faint)]">
+                    <svg viewBox="0 0 12 12" className="h-3 w-3" fill="none">
+                      <path
+                        d="M6 1a5 5 0 100 10A5 5 0 006 1zM6 1v10M1 6h10"
+                        stroke="currentColor"
+                        strokeWidth="0.8"
+                      />
+                    </svg>
+                    app.copyup.ai/{engine.id}-engine
+                  </span>
+                </div>
                 <Image
                   src={engine.screenshot}
                   alt={engine.title}
                   width={900}
                   height={620}
-                  className="w-full rounded-[calc(var(--radius-lg)-6px)]"
+                  className="w-full"
                 />
               </div>
 

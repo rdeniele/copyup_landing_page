@@ -2,9 +2,10 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { siteUrl } from "@/lib/content";
 import { useLanguage } from "@/lib/language-context";
-import LanguageToggle from "./LanguageToggle";
+import LanguageSelector from "./LanguageSelector";
 
 export default function Nav() {
   const { t } = useLanguage();
@@ -26,7 +27,7 @@ export default function Nav() {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 sm:px-10">
-        <a href="#top" className="flex items-center">
+        <Link href="/" className="flex items-center">
           <Image
             src={scrolled ? "/brand/copyup-logo.png" : "/brand/copyup-logo-white.png"}
             alt="CopyUp.ai"
@@ -35,7 +36,7 @@ export default function Nav() {
             className="h-7 w-auto"
             priority
           />
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
           {t.nav.links.map((link) => (
@@ -54,9 +55,9 @@ export default function Nav() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <LanguageToggle dark={!scrolled} />
+          <LanguageSelector dark={!scrolled} />
           <a
-            href={siteUrl}
+            href={`${siteUrl}/signup`}
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-[var(--radius-pill)] bg-[var(--deep-navy)] px-5 py-2.5 text-sm font-semibold text-white shadow-[var(--shadow-lift)] transition hover:brightness-110"

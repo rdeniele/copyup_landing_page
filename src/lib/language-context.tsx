@@ -8,20 +8,22 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { content, type Language } from "./content";
+import { content, languageOptions, rtlLanguages, type Language } from "./content";
 
 const STORAGE_KEY = "copyup-lang";
+const VALID_LANGUAGES = new Set<Language>(languageOptions.map((o) => o.code));
 
 type LanguageContextValue = {
   lang: Language;
-  toggle: () => void;
+  setLang: (lang: Language) => void;
+  isRtl: boolean;
   t: (typeof content)["en"];
 };
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLang] = useState<Language>("en");
+  const [lang, setLangState] = useState<Language>("en");
   const isFirstRun = useRef(true);
 
   useEffect(() => {
@@ -31,22 +33,24 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     if (isFirstRun.current) {
       isFirstRun.current = false;
       const saved = window.localStorage.getItem(STORAGE_KEY);
-      if ((saved === "en" || saved === "he") && saved !== lang) {
+      if (saved && VALID_LANGUAGES.has(saved as Language) && saved !== lang) {
         // eslint-disable-next-line react-hooks/set-state-in-effect
-        setLang(saved);
+        setLangState(saved as Language);
         return;
       }
     }
 
-    document.documentElement.dir = lang === "he" ? "rtl" : "ltr";
+    document.documentElement.dir = rtlLanguages.has(lang) ? "rtl" : "ltr";
     document.documentElement.lang = lang;
     window.localStorage.setItem(STORAGE_KEY, lang);
   }, [lang]);
 
-  const toggle = () => setLang((l) => (l === "en" ? "he" : "en"));
+  const setLang = (next: Language) => setLangState(next);
 
   return (
-    <LanguageContext.Provider value={{ lang, toggle, t: content[lang] }}>
+    <LanguageContext.Provider
+      value={{ lang, setLang, isRtl: rtlLanguages.has(lang), t: content[lang] }}
+    >
       {children}
     </LanguageContext.Provider>
   );

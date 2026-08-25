@@ -25,7 +25,7 @@ export default function HowItHappensScene() {
         {howItHappens.tags.map((tag) => (
           <span
             key={tag}
-            className="rounded-full border border-[var(--border)] bg-[var(--surface-2)] px-3 py-1 text-xs font-semibold text-[var(--text-muted)]"
+            className="rounded-full border border-[var(--border)] bg-[var(--surface-2)] px-3 py-1 text-xs font-semibold text-[var(--text-muted)] transition duration-200 hover:border-[var(--accent)] hover:text-[var(--accent-text)]"
           >
             {tag}
           </span>
@@ -34,9 +34,9 @@ export default function HowItHappensScene() {
 
       <div className="mt-12 grid w-full max-w-3xl grid-cols-2 gap-6 sm:grid-cols-4">
         {howItHappens.steps.map((s) => (
-          <div key={s.n} className="flex flex-col items-center gap-3">
+          <div key={s.n} className="group flex flex-col items-center gap-3">
             <div
-              className="flex h-12 w-12 items-center justify-center rounded-full font-display text-lg font-bold text-white"
+              className="flex h-12 w-12 items-center justify-center rounded-full font-display text-lg font-bold text-white transition-transform duration-200 group-hover:scale-110"
               style={{ background: "var(--brand-gradient)" }}
             >
               {s.n}

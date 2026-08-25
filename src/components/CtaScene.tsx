@@ -18,7 +18,7 @@ export default function CtaScene() {
       <p className="mx-auto mt-5 max-w-md text-[var(--text-muted)]">{leadCta.sub}</p>
 
       <a
-        href={siteUrl}
+        href={`${siteUrl}/signup`}
         target="_blank"
         rel="noopener noreferrer"
         className="mt-10 rounded-[var(--radius-pill)] px-8 py-4 text-sm font-semibold text-white shadow-[var(--shadow-lift)] transition hover:brightness-105"

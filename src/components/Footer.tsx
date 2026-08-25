@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { socialLinks } from "@/lib/content";
 import { useLanguage } from "@/lib/language-context";
 
@@ -13,13 +14,15 @@ export default function Footer() {
     <footer className="bg-[var(--surface)] px-6 pb-10 pt-20 sm:pt-24">
       <div className="mx-auto grid max-w-6xl gap-12 sm:grid-cols-[1.3fr_1fr_1fr]">
         <div className="flex flex-col items-start gap-4">
-          <Image
-            src="/brand/copyup-logo.png"
-            alt="CopyUp.ai"
-            width={200}
-            height={56}
-            className="h-9 w-auto"
-          />
+          <Link href="/" className="transition-opacity hover:opacity-80">
+            <Image
+              src="/brand/copyup-logo.png"
+              alt="CopyUp.ai"
+              width={200}
+              height={56}
+              className="h-9 w-auto"
+            />
+          </Link>
           <p className="max-w-xs text-sm text-[var(--text-muted)]">{footer.tagline}</p>
           <p className="text-xs uppercase tracking-[0.3em] text-[var(--text-faint)]">
             {footer.autopilot}
