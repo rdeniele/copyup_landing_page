@@ -37,6 +37,7 @@ const en = {
     eyebrow: "SEO · GEO · CONTENT MARKETING",
     headline: "Automated SEO & GEO Content Marketing",
     primaryCta: "Start Free",
+    reviewCta: "Get Your Free Pre-Marketing Review",
     microcopy: "7 days free · No credit card",
   },
   platforms: [
@@ -145,6 +146,7 @@ const he: typeof en = {
     eyebrow: "SEO · GEO · שיווק תוכן",
     headline: "שיווק תוכן אוטומטי ל-SEO ו-GEO",
     primaryCta: "התחילו בחינם",
+    reviewCta: "קבלו סקירת פרה-מרקטינג בחינם",
     microcopy: "7 ימים בחינם · ללא כרטיס אשראי",
   },
   platforms: [

@@ -63,7 +63,7 @@ export default function Hero() {
             {hero.headline}
           </h1>
           <div className="flex flex-col items-center gap-3">
-            <StartFreeButton label={hero.primaryCta} />
+            <StartFreeButton label={hero.reviewCta} />
             <p className="text-xs text-white/80 [text-shadow:0_1px_6px_rgba(0,0,0,0.35)]">
               {hero.microcopy}
             </p>
@@ -99,7 +99,7 @@ export default function Hero() {
               {hero.headline}
             </h1>
             <div className="flex flex-col items-end gap-3">
-              <StartFreeButton label={hero.primaryCta} />
+              <StartFreeButton label={hero.reviewCta} />
               <p className="text-xs text-white/85 [text-shadow:0_1px_6px_rgba(0,0,0,0.4)]">
                 {hero.microcopy}
               </p>
