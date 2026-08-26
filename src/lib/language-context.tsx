@@ -8,7 +8,7 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { content, languageOptions, rtlLanguages, type Language } from "./content";
+import { content, languageOptions, type Language } from "./content";
 
 const STORAGE_KEY = "copyup-lang";
 const VALID_LANGUAGES = new Set<Language>(languageOptions.map((o) => o.code));
@@ -16,7 +16,6 @@ const VALID_LANGUAGES = new Set<Language>(languageOptions.map((o) => o.code));
 type LanguageContextValue = {
   lang: Language;
   setLang: (lang: Language) => void;
-  isRtl: boolean;
   t: (typeof content)["en"];
 };
 
@@ -40,7 +39,9 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
       }
     }
 
-    document.documentElement.dir = rtlLanguages.has(lang) ? "rtl" : "ltr";
+    // The layout stays LTR for every language, including Hebrew — only the
+    // text and font swap. document.documentElement.dir is intentionally left
+    // at its default ("ltr") so structure matches the English page exactly.
     document.documentElement.lang = lang;
     window.localStorage.setItem(STORAGE_KEY, lang);
   }, [lang]);
@@ -48,9 +49,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const setLang = (next: Language) => setLangState(next);
 
   return (
-    <LanguageContext.Provider
-      value={{ lang, setLang, isRtl: rtlLanguages.has(lang), t: content[lang] }}
-    >
+    <LanguageContext.Provider value={{ lang, setLang, t: content[lang] }}>
       {children}
     </LanguageContext.Provider>
   );

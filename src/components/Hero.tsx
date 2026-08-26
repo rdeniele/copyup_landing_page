@@ -19,9 +19,8 @@ function StartFreeButton({ label }: { label: string }) {
 }
 
 export default function Hero() {
-  const { t, isRtl } = useLanguage();
+  const { t } = useLanguage();
   const hero = t.hero;
-  const mirrored = isRtl ? "scaleX(-1)" : undefined;
 
   return (
     <section
@@ -35,7 +34,7 @@ export default function Hero() {
           alt="Hand holding a laptop showing the CopyUp dashboard"
           fill
           sizes="100vw"
-          style={{ objectFit: "cover", objectPosition: "center", transform: mirrored }}
+          style={{ objectFit: "cover", objectPosition: "center" }}
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/22 via-transparent to-black/28" />
@@ -78,7 +77,7 @@ export default function Hero() {
           alt="Hand holding a laptop showing the CopyUp dashboard"
           fill
           sizes="100vw"
-          style={{ objectFit: "cover", objectPosition: "left top", transform: mirrored }}
+          style={{ objectFit: "cover", objectPosition: "left top" }}
           priority
         />
         <div className="absolute inset-0 bg-black/22" />
