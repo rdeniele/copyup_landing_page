@@ -13,7 +13,7 @@ export default function DistributionSection() {
   return (
     <section
       id="distribution"
-      className="flex min-h-screen flex-col items-center justify-center bg-[var(--surface)] px-6 py-16 text-center sm:py-20"
+      className="flex sm:min-h-screen flex-col items-center justify-center bg-[var(--surface)] px-6 py-16 text-center sm:py-20"
     >
       <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[var(--accent-text)]">
         {distribution.eyebrow}

@@ -7,7 +7,7 @@ export default function MultilingualSection() {
   const multilingual = t.multilingual;
 
   return (
-    <section className="flex min-h-[50vh] flex-col items-center justify-center bg-[var(--surface)] px-6 py-16 text-center sm:py-20">
+    <section className="flex sm:min-h-[50vh] flex-col items-center justify-center bg-[var(--surface)] px-6 py-16 text-center sm:py-20">
       <div className="mx-auto grid max-w-6xl items-center gap-8 lg:grid-cols-2 lg:gap-16">
         <div className="lg:text-start">
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[var(--accent-text)]">

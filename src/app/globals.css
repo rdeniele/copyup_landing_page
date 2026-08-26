@@ -128,22 +128,16 @@ html[dir="rtl"] .rtl-flip {
 
 /*
  * Reel scenes: on phone widths, every top-level section fills exactly one
- * screen and snaps into place — so scrolling through the site plays back
- * like swiping through an Instagram/TikTok Reel. Screen-record the scroll
- * on a phone viewport and it doubles as reel footage. Desktop gets normal
- * document flow (no snap, no forced height).
+ * screen, so scrolling through the site still reads like paging through
+ * story-sized beats. No scroll-snap — it fought the user's own scroll
+ * momentum and felt disruptive. Desktop gets normal document flow (no
+ * forced height).
  */
 @media (max-width: 639px) {
-  html {
-    scroll-snap-type: y mandatory;
-  }
-
   .reel-scene {
     min-height: 100svh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
   }
 }
