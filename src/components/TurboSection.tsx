@@ -77,7 +77,7 @@ export default function TurboSection() {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="mx-1.5 h-4 w-4 shrink-0"
+                  className="rtl-flip mx-1.5 h-4 w-4 shrink-0"
                 >
                   <path d="m9 6 6 6-6 6" />
                 </svg>

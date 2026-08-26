@@ -31,6 +31,8 @@ export const platformIcons = [
 export const content = { en, he };
 export type Language = keyof typeof content;
 
+export const rtlLanguages = new Set<Language>(["he"]);
+
 export const languageOptions: { code: Language; flag: string; name: string }[] = [
   { code: "en", flag: "🇺🇸", name: "English" },
   { code: "he", flag: "🇮🇱", name: "עברית" },

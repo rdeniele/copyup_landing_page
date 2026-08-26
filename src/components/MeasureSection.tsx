@@ -30,7 +30,7 @@ export default function MeasureSection() {
               {step}
             </span>
             {i < measure.flow.length - 1 && (
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 shrink-0 text-white/50">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="rtl-flip h-4 w-4 shrink-0 text-white/50">
                 <path d="m9 6 6 6-6 6" />
               </svg>
             )}

@@ -22,7 +22,7 @@ export default function GoogleAISection() {
           </div>
 
           <div className="overflow-hidden rounded-[var(--radius-lg)] bg-[#e7e7ea] shadow-xl shadow-black/15 transition duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/25">
-            <div className="flex items-center gap-2 px-4 py-2.5">
+            <div dir="ltr" className="flex items-center gap-2 px-4 py-2.5">
               <span className="h-3 w-3 rounded-full bg-[#ff5f57]" />
               <span className="h-3 w-3 rounded-full bg-[#febc2e]" />
               <span className="h-3 w-3 rounded-full bg-[#28c840]" />

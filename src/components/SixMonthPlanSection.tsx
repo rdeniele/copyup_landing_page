@@ -83,7 +83,7 @@ export default function SixMonthPlanSection() {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="h-5 w-5 shrink-0 text-[var(--text-faint)]"
+                  className="rtl-flip h-5 w-5 shrink-0 text-[var(--text-faint)]"
                 >
                   <path d="m9 6 6 6-6 6" />
                 </svg>
