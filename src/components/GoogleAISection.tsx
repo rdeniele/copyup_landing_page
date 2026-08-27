@@ -10,7 +10,7 @@ export default function GoogleAISection() {
 
   return (
     <>
-      <section className="flex sm:min-h-screen flex-col items-center justify-center bg-[var(--surface)] px-6 py-16 sm:py-20">
+      <section className="flex flex-col items-center justify-center bg-[var(--surface)] px-6 py-16 sm:py-20">
         <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <div className="text-start">
             <p className="font-display text-lg font-semibold leading-snug text-[var(--text)] sm:text-2xl">
@@ -44,7 +44,7 @@ export default function GoogleAISection() {
         </div>
       </section>
 
-      <section className="flex sm:min-h-screen flex-col items-center justify-center bg-[var(--surface)] px-6 py-16 text-center sm:py-20">
+      <section className="flex flex-col items-center justify-center bg-[var(--surface)] px-6 py-16 text-center sm:py-20">
         <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <div className="text-start">
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[var(--accent-text)]">

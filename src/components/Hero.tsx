@@ -26,7 +26,7 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="reel-scene relative overflow-hidden rounded-b-[2.5rem] sm:rounded-b-[4rem] lg:min-h-[44rem]"
+      className="reel-scene relative overflow-hidden rounded-b-[2.5rem] sm:min-h-[36rem] sm:rounded-b-[4rem] lg:min-h-[44rem]"
     >
       {/* Mobile: full-bleed background photo with text overlaid top and bottom */}
       <div className="absolute inset-0 lg:hidden">

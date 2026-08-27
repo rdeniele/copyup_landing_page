@@ -51,7 +51,7 @@ export default function TurboSection() {
 
   return (
     <section
-      className="flex sm:min-h-screen flex-col items-center justify-center rounded-[2.5rem] px-6 py-16 text-center sm:rounded-[4rem] sm:py-20"
+      className="flex flex-col items-center justify-center rounded-[2.5rem] px-6 py-16 text-center sm:rounded-[4rem] sm:py-20"
       style={{ background: "#59d5c9" }}
     >
       <div className="mx-auto max-w-6xl">

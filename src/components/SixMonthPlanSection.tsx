@@ -49,7 +49,7 @@ export default function SixMonthPlanSection() {
   return (
     <section
       id="six-month-plan"
-      className="flex sm:min-h-screen flex-col items-center justify-center bg-[var(--surface)] px-6 py-16 text-center sm:py-20"
+      className="flex flex-col items-center justify-center bg-[var(--surface)] px-6 py-16 text-center sm:py-20"
     >
       <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[var(--accent-text)]">
         {plan.eyebrow}

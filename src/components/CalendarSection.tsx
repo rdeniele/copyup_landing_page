@@ -48,7 +48,7 @@ export default function CalendarSection() {
 
   return (
     <section
-      className="flex sm:min-h-[50vh] flex-col items-center justify-center px-6 py-16 text-center sm:py-20"
+      className="flex flex-col items-center justify-center px-6 py-16 text-center sm:py-20"
       style={{ background: "#7b3aec" }}
     >
       <p className="text-xs font-semibold uppercase tracking-[0.25em] text-white/80">
