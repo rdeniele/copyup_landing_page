@@ -66,11 +66,15 @@ export default function Hero() {
       {/* Desktop: full-bleed background photo with a dark overlay for text contrast */}
       <div className="absolute inset-0 hidden lg:block">
         <Image
-          src="/hero_background/copyup_hand_left_pc_2.png"
+          src={
+            isRtl
+              ? "/hero_background/copyup_hand_right_pc.png"
+              : "/hero_background/copyup_hand_left_pc_3.png"
+          }
           alt="Hand holding a laptop showing the CopyUp dashboard"
           fill
           sizes="100vw"
-          style={{ objectFit: "cover", objectPosition: "left top", transform: mirrored }}
+          style={{ objectFit: "cover", objectPosition: isRtl ? "right top" : "left top" }}
           priority
         />
         <div className="absolute inset-0 bg-black/22" />
